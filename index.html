@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spectra News Hub 🌊 - Estefany Julieth Ochoa Barrera</title>
+  <meta name="description" content="Piattaforma avanzata per Entertainment Italia - 6 API Endpoints">
+  <meta name="author" content="Estefany Julieth Ochoa Barrera - SENA">
+  
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#00d4ff">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  
+  <!-- Fonts Futuristic -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- GLASS HERO -->
+  <header class="glass-hero">
+    <div class="hero-grid">
+      <div class="hero-brand">
+        <div class="neon-logo">
+          <span class="logo-glow">SPECTRA</span>
+          <span class="logo-pulse">HUB</span>
+        </div>
+        <div class="tech-tagline">Entertainment Italia • 6 Quantum APIs</div>
+        <div class="dev-credit">✨ Estefany Julieth Ochoa Barrera • SENA 2024</div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <div class="stat-number">6</div>
+          <div>API Endpoints</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">🇮🇹</div>
+          <div>Italia Focus</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">PWA</div>
+          <div>Installabile</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- CYBER NAV -->
+  <nav class="cyber-nav">
+    <div class="nav-scroller">
+      <button class="nav-chip active" data-panel="prime">
+        <div class="chip-icon">⚡</div>
+        <div>Prime News</div>
+      </button>
+      <button class="nav-chip" data-panel="stream">
+        <div class="chip-icon">🌊</div>
+        <div>News Stream</div>
+      </button>
+      <button class="nav-chip" data-panel="quantum">
+        <div class="chip-icon">🔍</div>
+        <div>Quantum Search</div>
+      </button>
+      <button class="nav-chip" data-panel="echo">
+        <div class="chip-icon">🔄</div>
+        <div>Echo Similar</div>
+      </button>
+      <button class="nav-chip" data-panel="matrix">
+        <div class="chip-icon">📡</div>
+        <div>Sources Matrix</div>
+      </button>
+      <button class="nav-chip" data-panel="core">
+        <div class="chip-icon">📄</div>
+        <div>Article Core</div>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MAIN DASHBOARD -->
+  <div class="dashboard">
+    
+    <!-- 1. PRIME NEWS -->
+    <div class="control-matrix active" id="panel-prime">
+      <div class="api-auth">
+        <div class="auth-header">⚡ Prime News (Top Headlines)</div>
+        <input type="password" id="primeToken" placeholder="Enter API Token..." class="code-input">
+      </div>
+      <div class="control-grid">
+        <div class="param-card">
+          <label>Language</label>
+          <select id="primeLang">
+            <option value="it" selected>🇮🇹 Italiano</option>
+            <option value="en">🌍 English</option>
+          </select>
+        </div>
+        <div class="param-card">
+          <label>Category</label>
+          <select id="primeCat">
+            <option value="entertainment" selected>🎬 Entertainment</option>
+            <option value="sports">⚽ Sports</option>
+          </select>
+        </div>
+        <div class="param-card">
+          <label>Results</label>
+          <select id="primeCount">
+            <option value="6">6 Items</option>
+            <option value="9" selected>9 Items</option>
+          </select>
+        </div>
+      </div>
+      <button class="launch-btn" onclick="activatePrime()">🚀 Launch Prime</button>
+    </div>
+
+    <!-- 2. NEWS STREAM -->
+    <div class="control-matrix" id="panel-stream">
+      <div class="api-auth">
+        <div class="auth-header">🌊 News Stream (All News)</div>
+        <input type="password" id="streamToken" placeholder="Enter API Token..." class="code-input">
+      </div>
+      <div class="control-grid">
+        <div class="param-card">
+          <label>Language</label>
+          <select id="streamLang">
+            <option value="it" selected>🇮🇹 Italiano</option>
+          </select>
+        </div>
+        <div class="param-card">
+          <label>Category</label>
+          <select id="streamCat">
+            <option value="entertainment" selected>🎬 Entertainment</option>
+            <option value="general">📰 General</option>
+          </select>
+        </div>
+        <div class="param-card">
+          <label>Results</label>
+          <select id="streamCount">
+            <option value="6" selected>6 Items</option>
+            <option value="12">12 Items</option>
+          </select>
+        </div>
+      </div>
+      <button class="launch-btn" onclick="activateStream()">🌊 Launch Stream</button>
+    </div>
+
+    <!-- 3. QUANTUM SEARCH -->
+    <div class="control-matrix" id="panel-quantum">
+      <div class="api-auth">
+        <div class="auth-header">🔍 Quantum Search</div>
+        <input type="password" id="quantumToken" placeholder="Enter API Token..." class="code-input">
+      </div>
+      <div class="control-grid">
+        <div class="param-card">
+          <label>Keywords</label>
+          <input type="text" id="searchQuery" placeholder="cinema, festival, celebrity..." class="code-input" value="cinema">
+        </div>
+        <div class="param-card">
+          <label>Language</label>
+          <select id="quantumLang">
+            <option value="it" selected>🇮🇹 Italiano</option>
+          </select>
+        </div>
+        <div class="param-card">
+          <label>Results</label>
+          <select id="quantumCount">
+            <option value="6" selected>6 Items</option>
+            <option value="12">12 Items</option>
+          </select>
+        </div>
+      </div>
+      <button class="launch-btn" onclick="activateQuantum()">🔍 Search Now</button>
+    </div>
+
+    <!-- 4. ECHO SIMILAR -->
+    <div class="control-matrix" id="panel-echo">
+      <div class="api-auth">
+        <div class="auth-header">🔄 Echo Similar</div>
+        <input type="password" id="echoToken" placeholder="Enter API Token..." class="code-input">
+      </div>
+      <div class="control-grid">
+        <div class="param-card">
+          <label>Article UUID</label>
+          <input type="text" id="echoId" placeholder="Paste UUID here..." class="code-input" value="demo-123">
+        </div>
+        <div class="param-card">
+          <label>Limit</label>
+          <select id="echoLimit">
+            <option value="5" selected>5 Similar</option>
+            <option value="10">10 Similar</option>
+          </select>
+        </div>
+      </div>
+      <button class="launch-btn" onclick="activateEcho()">🔄 Find Similar</button>
+    </div>
+
+    <!-- 5. SOURCES MATRIX -->
+    <div class="control-matrix" id="panel-matrix">
+      <div class="api-auth">
+        <div class="auth-header">📡 Sources Matrix</div>
+        <input type="password" id="matrixToken" placeholder="Enter API Token..." class="code-input">
+      </div>
+      <div class="control-grid">
+        <div class="param-card">
+          <label>Language</label>
+          <select id="matrixLang">
+            <option value="it" selected>🇮🇹 Italiano</option>
+          </select>
+        </div>
+        <div class="param-card">
+          <label>Category</label>
+          <select id="matrixCat">
+            <option value="entertainment" selected>🎬 Entertainment</option>
+          </select>
+        </div>
+      </div>
+      <button class="launch-btn" onclick="activateMatrix()">📡 Load Sources</button>
+    </div>
+
+    <!-- 6. CORE DETAIL -->
+    <div class="control-matrix" id="panel-core">
+      <div class="api-auth">
+        <div class="auth-header">📄 Article Core</div>
+        <input type="password" id="coreToken" placeholder="Enter API Token..." class="code-input">
+      </div>
+      <div class="control-grid">
+        <div class="param-card">
+          <label>Article UUID</label>
+          <input type="text" id="coreId" placeholder="Paste UUID here..." class="code-input" value="demo-456">
+        </div>
+      </div>
+      <button class="launch-btn" onclick="activateCore()">📄 Load Detail</button>
+    </div>
+
+    <!-- OUTPUT TERMINAL -->
+    <main class="output-terminal">
+      
+      <!-- PRIME SCREEN -->
+      <section class="terminal-screen active" id="screen-prime">
+        <div class="screen-header">
+          <h2>⚡ <span class="neon-text">PRIME</span> News</h2>
+          <div class="api-path">/v1/news/top?locale=it</div>
+        </div>
+        <div id="primeOutput" class="output-zone">
+          <div class="welcome-matrix">
+            <div class="matrix-particle">⚡</div>
+            <h3>Prime News Ready</h3>
+            <p>Enter token and launch top Entertainment headlines</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- STREAM SCREEN -->
+      <section class="terminal-screen" id="screen-stream">
+        <div class="screen-header">
+          <h2>🌊 <span class="neon-text">NEWS STREAM</span></h2>
+          <div class="api-path">/v1/news/all?locale=it</div>
+        </div>
+        <div id="streamOutput" class="output-zone">
+          <div class="welcome-matrix">
+            <div class="matrix-particle">🌊</div>
+            <h3>Stream Ready</h3>
+            <p>Launch continuous Entertainment news flow</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- QUANTUM SCREEN -->
+      <section class="terminal-screen" id="screen-quantum">
+        <div class="screen-header">
+          <h2>🔍 <span class="neon-text">QUANTUM</span> Search</h2>
+          <div class="api-path">/v1/news/search?keywords=cinema</div>
+        </div>
+        <div id="quantumOutput" class="output-zone">
+          <div class="welcome-matrix">
+            <div class="matrix-particle">🔍</div>
+            <h3>Search Engine Active</h3>
+            <p>Enter keywords like "cinema" or "festival"</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ECHO SCREEN -->
+      <section class="terminal-screen" id="screen-echo">
+        <div class="screen-header">
+          <h2>🔄 <span class="neon-text">ECHO</span> Similar</h2>
+          <div class="api-path">/v1/news/similar?article=UUID</div>
+        </div>
+        <div id="echoOutput" class="output-zone">
+          <div class="welcome-matrix">
+            <div class="matrix-particle">🔄</div>
+            <h3>Echo System Online</h3>
+            <p>Paste article UUID to find similar content</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- MATRIX SCREEN -->
+      <section class="terminal-screen" id="screen-matrix">
+        <div class="screen-header">
+          <h2>📡 <span class="neon-text">SOURCES</span> Matrix</h2>
+          <div class="api-path">/v1/news/sources?locale=it</div>
+        </div>
+        <div id="matrixOutput" class="output-zone">
+          <div class="welcome-matrix">
+            <div class="matrix-particle">📡</div>
+            <h3>Sources Matrix Ready</h3>
+            <p>Load all Italian Entertainment sources</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CORE SCREEN -->
+      <section class="terminal-screen" id="screen-core">
+        <div class="screen-header">
+          <h2>📄 <span class="neon-text">CORE</span> Detail</h2>
+          <div class="api-path">/v1/news/detail?article=UUID</div>
+        </div>
+        <div id="coreOutput" class="output-zone">
+          <div class="welcome-matrix">
+            <div class="matrix-particle">📄</div>
+            <h3>Core Reader Active</h3>
+            <p>Paste UUID for full article details</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- NEON FOOTER -->
+  <footer class="neon-footer">
+    <div class="footer-glow">
+      <strong>Spectra News Hub</strong> • 6/6 API Endpoints • PWA Ready
+      <br>Estefany Julieth Ochoa Barrera • SENA 2024 🇮🇹🎬
+    </div>
+  </footer>
+
+  <!-- LOADING VEIL -->
+  <div id="veil" class="loading-veil">
+    <div class="orbital-loader">
+      <div class="orbit"></div>
+      <div class="core">Quantum Loading...</div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
